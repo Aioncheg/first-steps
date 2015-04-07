@@ -3,3 +3,4 @@
 ._*
 *.sass-cache
 index.html
+node_modules/
