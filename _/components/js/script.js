@@ -1,64 +1,46 @@
-var pixGrid = function() { 
+var pixGrid = function() {
   //Selecting our node
-  var myNode = document.querySelector('.pixgrid');
-  myNode.addEventListener("click", function(e) {
+  var myNode = document.querySelector('#artistlist .pixgrid');
 
-    if(e.target.tagName === 'IMG') {
-
+  myNode.addEventListener("click", function (e) {
+    if (e.target.tagName === 'IMG') {
       var myOverlay = document.createElement('div');
       myOverlay.id = 'overlay';
       document.body.appendChild(myOverlay);
 
-      //set up overlay styles
+      //set overlay styles
       myOverlay.style.position = 'absolute';
       myOverlay.style.top = 0;
-      myOverlay.style.backgroundColor = 'rgba(0,0,0,0.7)';
+      myOverlay.style.backgroundColor = 'rgba(0,0,0,.7';
       myOverlay.style.cursor = 'pointer';
-
-      //resize and position overlay
+      
       myOverlay.style.width = window.innerWidth + 'px';
       myOverlay.style.height = window.innerHeight + 'px';
       myOverlay.style.top = window.pageYOffset + 'px';
       myOverlay.style.left = window.pageXOffset + 'px';
 
-      //Create image element
       var imageSrc = e.target.src;
       var largeImage = document.createElement('img');
       largeImage.id = 'largeImage';
       largeImage.src = imageSrc.substr(0, imageSrc.length-7) + '.jpg';
       largeImage.style.display = 'block';
       largeImage.style.position = 'absolute';
-      
+
       //wait until the image has loaded
       largeImage.addEventListener('load', function() {
-
-        //Resize if taller
-        if (this.height > window.innerHeight) {
-          this.ratio = window.innerHeight / this.height;
-          this.height = this.height * this.ratio;
-          this.width = this.width * this.ratio;
-        }
-
-        //Resize if wider
-        if (this.width > window.innerWidth) {
-          this.ratio = window.innerWidth / this.width;
-          this.height = this.height * this.ratio;
-          this.width = this.width * this.ratio;
-        }
-
+        resizeImage(this);
         centerImage(this);
         myOverlay.appendChild(largeImage);
-
       }); //image has loaded
 
-      largeImage.addEventListener('click', function() {
-        if (myOverlay) {
+      if (largeImage) {
+        myOverlay.addEventListener('click', function() {
           window.removeEventListener('resize', window, false);
           window.removeEventListener('scroll', window, false);
           myOverlay.parentNode.removeChild(myOverlay);
-        }
-      }, false)
-
+        })
+      };
+      //move image when scrolling
       window.addEventListener('scroll', function() {
         if (myOverlay) {
           myOverlay.style.top = window.pageYOffset + 'px';
@@ -66,30 +48,36 @@ var pixGrid = function() {
         }
       }, false);
 
+      //resize image when resize window
       window.addEventListener('resize', function() {
         if (myOverlay) {
           myOverlay.style.width = window.innerWidth + 'px';
           myOverlay.style.height = window.innerHeight + 'px';
           myOverlay.style.top = window.pageYOffset + 'px';
           myOverlay.style.left = window.pageXOffset + 'px';
-
+          resizeImage(largeImage);
           centerImage(largeImage);
         }
-      }, false)
-
-
-    } // target is an image
-
-  }, false); //image is clicked
+      }, false);
+    }
+  }, false);
 
   function centerImage(theImage) {
-    var myDifX = (window.innerWidth - theImage.width)/2;
-    var myDifY = (window.innerHeight - theImage.height)/2;
+    var myDifX = (window.innerWidth - theImage.width) / 2;
+    var myDifY = (window.innerHeight - theImage.height) / 2;
 
     theImage.style.top = myDifY + 'px';
     theImage.style.left = myDifX + 'px';
 
     return theImage;
-  }
+  };
 
-}(); //self executing function
+  function resizeImage(theImage) {
+    var ratioW = window.innerWidth / theImage.width;
+    var ratioH = window.innerHeight / theImage.height;
+        
+    theImage.height = theImage.height * Math.min(ratioW, ratioH);
+    theImage.width = theImage.width * Math.min(ratioW, ratioH);
+
+  }
+}();
