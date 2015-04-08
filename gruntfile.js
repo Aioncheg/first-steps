@@ -6,31 +6,27 @@ module.exports = function(grunt) {
 		uglify: {
 			my_target: {
 				files: {
-					'_/js/script.js': ['_/components/js/*.js']
-				} //files
-			} //my_target
-		}, //uglify
+					'public/javascripts/script.js': ['_/js/*.js']
+				}
+			}
+		},
 		compass: {
 			dev: {
 				options: {
 					config: 'config.rb'
-				} //options
-			} //dev
-		}, //compass
+				} 
+			} 
+		}, 
 		watch: {
-			options: { livereload: true},
 			scripts: {
-				files: ['_/components/js/*.js'],
+				files: ['_/js/*.js'],
 				tasks: ['uglify']				
-			}, //scripts
+			},
 			sass: {
-				files: ['_/components/sass/*.scss'],
+				files: ['_/sass/*.scss'],
 				tasks: ['compass:dev']
-			}, //sass
-			html: {
-				files: ['*.html']
-			} //html
-		} //watch
-	}) //initConfig
+			}
+		}
+	})
 	grunt.registerTask('default', 'watch');
-} //exports
+}
