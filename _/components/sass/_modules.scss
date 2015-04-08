@@ -8,17 +8,6 @@
 			border-bottom: 1px dotted $lightgray;
 			margin-bottom: 5px;
 		}
-
-		img {
-			@include border-radius;
-			width: 120px;
-			float: left;
-
-			margin: {
-				right: 10px;
-				bottom: 10px;
-			}
-		}
 	}
 }
 
@@ -26,6 +15,7 @@
 #nextmeeting {
 	@include clearfix;
 	img {
+		@include border-radius;
 		width: 30%;
 		max-width: 130px;
 		float: left;
