@@ -10,9 +10,7 @@
 							</a>
 						</span>
 					</h3>
-					<p>
-					<a href="/speakers/<%= item.shortname %>"><img class="speaker" src="/images/speakers/<%= item.shortname %>_tn.jpg" alt="Photo of <%= item.name %>"/></a>
-					</p>
+					<p><a href="/speakers/<%= item.shortname %>"><img class="speaker" src="/images/speakers/<%= item.shortname %>_tn.jpg" alt="Photo of <%= item.name %>"/></a></p>
 					<%if (page != 'home') { %>
 						<% if (page === 'artistList') { %>
 							<%- item.summary %>

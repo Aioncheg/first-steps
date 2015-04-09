@@ -52,4 +52,5 @@ router.get('/speakers/:speakerid', function(req, res) {
 		page: 'artistDetail'
 	});
 });
+
 module.exports = router;
