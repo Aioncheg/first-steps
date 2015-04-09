@@ -1,6 +1,6 @@
 var pixGrid = function() {
   //Selecting our node
-  var myNode = document.querySelector('#artistlist .pixgrid');
+  var myNode = document.querySelector('#artworklist .pixgrid');
 
   myNode.addEventListener("click", function (e) {
     if (e.target.tagName === 'IMG') {
