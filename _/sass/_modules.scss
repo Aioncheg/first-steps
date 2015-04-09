@@ -8,6 +8,14 @@
 			border-bottom: 1px dotted $lightgray;
 			margin-bottom: 5px;
 		}
+
+		img {
+			width: 120px;
+			float: left;
+			@include border-radius;
+			margin-right: 10px;
+			margin-bottom: 10px;
+		}
 	}
 }
 

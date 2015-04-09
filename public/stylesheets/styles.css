@@ -302,7 +302,7 @@ header .hero {
 }
 
 /* line 124, ../../_/sass/_layout.scss */
-.speakerslist img {
+.home .speakerslist img {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
@@ -312,12 +312,12 @@ header .hero {
   margin-bottom: 10px;
 }
 /* line 134, ../../_/sass/_layout.scss */
-.speakerslist i {
+.home .speakerslist i {
   padding-right: 15px;
 }
 @media (min-width: 47em) {
   /* line 123, ../../_/sass/_layout.scss */
-  .speakerslist {
+  .home .speakerslist {
     text-align: center;
     background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzBkMzM0MCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzA0MjAyOSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
     background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0d3340), color-stop(100%, #042029));
@@ -329,12 +329,12 @@ header .hero {
     padding-bottom: 10px;
   }
   /* line 145, ../../_/sass/_layout.scss */
-  .speakerslist h1, .speakerslist h2, .speakerslist h3, .speakerslist h4, .speakerslist h5, .speakerslist h6 {
+  .home .speakerslist h1, .home .speakerslist h2, .home .speakerslist h3, .home .speakerslist h4, .home .speakerslist h5, .home .speakerslist h6 {
     text-shadow: none;
     border-bottom: none !important;
   }
   /* line 150, ../../_/sass/_layout.scss */
-  .speakerslist h1 {
+  .home .speakerslist h1 {
     color: #738A05;
     font-size: 2.6rem;
     line-height: 1em;
@@ -342,35 +342,35 @@ header .hero {
 }
 @media (min-width: 47em) and (min-width: 75em) {
   /* line 150, ../../_/sass/_layout.scss */
-  .speakerslist h1 {
+  .home .speakerslist h1 {
     font-size: 4rem;
     line-height: 1em;
   }
 }
 @media (min-width: 47em) {
   /* line 161, ../../_/sass/_layout.scss */
-  .speakerslist h3 {
+  .home .speakerslist h3 {
     color: #d69a08;
     line-height: .9rem;
   }
   /* line 166, ../../_/sass/_layout.scss */
-  .speakerslist .small {
+  .home .speakerslist .small {
     display: block;
     padding-top: .4em !important;
     line-height: 1em;
     color: #2390b3;
   }
   /* line 171, ../../_/sass/_layout.scss */
-  .speakerslist .small a {
+  .home .speakerslist .small a {
     color: #2390b3;
     text-decoration: none;
   }
   /* line 174, ../../_/sass/_layout.scss */
-  .speakerslist .small a:hover {
+  .home .speakerslist .small a:hover {
     text-decoration: underline;
   }
   /* line 180, ../../_/sass/_layout.scss */
-  .speakerslist img.speaker {
+  .home .speakerslist img.speaker {
     float: none;
     width: 40%;
     max-width: 170px;
@@ -380,7 +380,7 @@ header .hero {
     border-radius: 50%;
   }
   /* line 188, ../../_/sass/_layout.scss */
-  .speakerslist p:nth-of-type(2) {
+  .home .speakerslist p:nth-of-type(2) {
     font-weight: 200 !important;
     text-align: left;
     font-size: .8em;
@@ -392,18 +392,18 @@ header .hero {
     transition: all 0.3s ease-out;
   }
   /* line 199, ../../_/sass/_layout.scss */
-  .speakerslist:hover p:nth-of-type(2) {
+  .home .speakerslist:hover p:nth-of-type(2) {
     opacity: 1;
     line-height: 1.5em;
   }
   /* line 206, ../../_/sass/_layout.scss */
-  .speakerslist .artist {
+  .home .speakerslist .artist {
     width: 32.20339%;
     float: left;
     margin-right: 1.69492%;
   }
   /* line 210, ../../_/sass/_layout.scss */
-  .speakerslist .artist:nth-of-type(3) {
+  .home .speakerslist .artist:nth-of-type(3) {
     width: 32.20339%;
     float: right;
     margin-right: 0;
@@ -431,13 +431,23 @@ footer {
   border-bottom: 1px dotted #819090;
   margin-bottom: 5px;
 }
+/* line 12, ../../_/sass/_modules.scss */
+.speakers .artist img {
+  width: 120px;
+  float: left;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
 
-/* line 15, ../../_/sass/_modules.scss */
+/* line 23, ../../_/sass/_modules.scss */
 #nextmeeting {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 17, ../../_/sass/_modules.scss */
+/* line 25, ../../_/sass/_modules.scss */
 #nextmeeting p img {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -448,20 +458,20 @@ footer {
   margin-right: 3%;
 }
 
-/* line 28, ../../_/sass/_modules.scss */
+/* line 36, ../../_/sass/_modules.scss */
 .socialmediaicons .title {
   float: left;
 }
-/* line 32, ../../_/sass/_modules.scss */
+/* line 40, ../../_/sass/_modules.scss */
 .socialmediaicons ul {
   float: left;
 }
-/* line 34, ../../_/sass/_modules.scss */
+/* line 42, ../../_/sass/_modules.scss */
 .socialmediaicons ul li {
   display: inline-block;
   margin-left: 5px;
 }
-/* line 37, ../../_/sass/_modules.scss */
+/* line 45, ../../_/sass/_modules.scss */
 .socialmediaicons ul li img {
   width: 30px;
   -moz-border-radius: 50%;
@@ -469,12 +479,12 @@ footer {
   border-radius: 50%;
 }
 
-/* line 46, ../../_/sass/_modules.scss */
+/* line 54, ../../_/sass/_modules.scss */
 .pixgrid {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 48, ../../_/sass/_modules.scss */
+/* line 56, ../../_/sass/_modules.scss */
 .pixgrid img {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
